@@ -6,6 +6,7 @@
         {
             CheckDrinkingAge();
             ArrayOfNumersAndLetters();
+            DictionaryAreLikeObject();
         }
         /*
          I create this function to test the age of the user to see if he can drink by using the if statement and user input by
@@ -47,6 +48,37 @@
             List<string> Letters = new List<string> { "a", "b", "c", "d", "e", "f" };
             Letters.Add("g");
             Numbers.Add(11);
+        }
+
+        /*
+          in c# object are not like javascript they are different    
+
+          static void ListOfObject() { 
+            var obj = {
+                string life = "new";
+                int luckNumber = 12;
+             }
+        }*/
+        /*
+         We use Dictionary as like javascript object they have a key Value Pairs but lot of differents bettwen them
+         frist we have to define the types we are using like int , flot, double ,char , string then give it a name 
+         then create a new intsta.. of it  then we can difine the value and key of it.
+         Dictionary requires 2 type of arguments first for the key and the secound for value. 
+         */
+        static void DictionaryAreLikeObject()
+    {
+        Dictionary<string,int> keyValuePairs = new Dictionary<string,int>();
+
+        // Adding key-value pairs
+        keyValuePairs["apple"] = 7;
+        keyValuePairs["banana"] = 5;
+        keyValuePairs["orange"] = 8;
+            // foreach is loop thougth each of the keys and values then print it out to the console
+            foreach (var pair in keyValuePairs)
+            {
+                Console.WriteLine($"Key: {pair.Key}, Value: {pair.Value}");
+            }
+
         }
     }
 }
