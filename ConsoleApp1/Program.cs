@@ -8,6 +8,7 @@
             Console.WriteLine("Hello , life");
             Console.WriteLine("Hello , New World ");
             Console.WriteLine("push button");
+            Console.WriteLine("commit all");
 
         }
     }
