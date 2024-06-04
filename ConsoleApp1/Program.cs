@@ -1,35 +1,59 @@
-﻿namespace ConsoleApp1
+﻿using System.Drawing;
+using System.Numerics;
+
+namespace ConsoleApp1
 {
     internal class Program
     {
         static void Main(string[] args)
         {
+            Types();
             CheckDrinkingAge();
             ArrayOfNumersAndLetters();
             DictionaryAreLikeObject();
-        }
-        /*
-         I create this function to test the age of the user to see if he can drink by using the if statement and user input by
-         Readline and i conver the int to a string because c# is a strongly typed language 
-         */
-        static void CheckDrinkingAge()
-        {
-            Console.WriteLine("Please enter your age:");
-            int age = Convert.ToInt32(Console.ReadLine());
-            if (age >= 18)
-            {
-                Console.WriteLine("here you go ");
-            }
-            else if (age < 18 && age >= 0)
-            {
-                Console.WriteLine("please go away");
-            }
-            else
-            {
-                Console.WriteLine("how can i help you ");
-            }
+            loops();
         }
 
+        /*
+         I wrote all of the data types that i know then use ai to learn some of the other that i didn't know about.
+         */
+        static void Types() {
+            // Integral types
+            byte    ByteNumber = 0;  // 8-bit unsigned integer (0 to 255)
+            short   ShortNumber = 0;  // 16-bit signed integer (-32,768 to 32,767)
+            int     IntNumber = 0;  // 32-bit signed integer (-2,147,483,648 to 2,147,483,647)
+            long    LongNumber = 0;
+
+            // Floating-point types
+            float FloatNumber = 0; // 32-bit single-precision floating-point type
+            double  DoubleNumber = 0; // 64 - bit double-precision floating - point type
+            decimal DecimalNumber = 0.0m; // 128-bit high precision decimal type
+
+            // Arbitrary precision integer        
+            BigInteger bigInteger = 0; // Represents an arbitrarily large signed integer
+
+            // Other types
+            char charLetter = 'a'; // Represents a Unicode character
+            string  stringWords = "new Words"; // Represents a sequence of character
+            bool true_false = false; // Represents a Boolean value (true or false)
+
+            
+            // These type i didn't know about that i learn about from chat gpt 
+            /*
+             DateTime: Used for representing dates and times.
+             */
+            DateTime currentDate = DateTime.Now; // Represents the current date and time
+            /*
+             TimeSpan: Represents a time interval.
+             */
+            TimeSpan duration = new TimeSpan(1, 30, 0); // Represents 1 hour and 30 minutes
+            /*
+               Nullable Types: Allow variables to have the additional value of null in addition to their usual value ranges. 
+               You can make any value type nullable by appending a ? after its type.
+            */
+            int? nullableInt = null; // Nullable integer
+        }
+ 
         /* 
            this is a function in c# im return nothing by using the key void. 
            I still don't know what is static means.
@@ -80,5 +104,57 @@
             }
 
         }
+
+        /*
+        I create this function to test the age of the user to see if he can drink by using the if statement and user input by
+        Readline and i conver the int to a string because c# is a strongly typed language 
+        */
+        static void CheckDrinkingAge()
+        {
+            Console.WriteLine("Please enter your age:");
+            int age = Convert.ToInt32(Console.ReadLine());
+            if (age >= 18)
+            {
+                Console.WriteLine("here you go ");
+            }
+            else if (age < 18 && age >= 0)
+            {
+                Console.WriteLine("please go away");
+            }
+            else
+            {
+                Console.WriteLine("how can i help you ");
+            }
+        }
+
+        /*
+         write diferent types loops 
+         */
+        static void loops() {
+            for (int i = 0; i < 10; i++) {
+                Console.WriteLine(i);
+            }
+            /* 
+               In c#  we don't have for in or for of like in javascript
+               we use a froeach to loop thought a object like  in javascript.
+               this was take from chat gpt to learn about it. 
+             */
+            int[] numbers = { 1, 2, 3, 4, 5 };
+            var evenNumbers = numbers.Where(n => n % 2 == 0);
+            foreach (var number in evenNumbers)
+            {
+                Console.WriteLine(number);
+            }
+            int age = 18;
+            while (age >= 18) {
+                Console.WriteLine("Print here is a while loop");
+            };
+            do
+            {
+                Console.WriteLine("Print here is a do while loop");
+            } while (age <= 10);
+
+        }
     }
+
 }
